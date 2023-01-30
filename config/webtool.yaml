@@ -1,0 +1,15 @@
+logger:
+  enable: true
+  level: debug
+  filename: ""
+  maxsize: 100      # 100 Mi
+  localtime: "true" # 是否使用计算机本地时间，默认使用 UTC
+
+#---------------- server config ----------------
+http:
+  server:
+    # type echo: 回应; waf: 配套nginx测试请求和响应回包.
+    - addr: 0.0.0.0:8090
+      type: waf
+    - addr: 0.0.0.0:9528
+      type: echo
